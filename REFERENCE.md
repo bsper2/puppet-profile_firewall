@@ -33,6 +33,7 @@ Data type: `Hash`
 Lists of ignore regex's for specific firewall chains.
 Keys must be in "CHAIN:TABLE:PROTOCOL" format.
 Values must be an Array of strings in Ruby regex format.
+
 @see https://forge.puppet.com/puppetlabs/firewall/reference#firewallchain
 
 ##### `pre`
