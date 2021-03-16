@@ -12,6 +12,16 @@
 #   Keys must begin with a 3-digit numer followed by a comment.
 #   The 3-digit number indicates firewall rule order, lower numbered rules are
 #   added before higher numbers.
+# 
+#   @example
+#     "000 accept all icmp":
+#       proto: "icmp"
+#       action: "accept"
+#     "001 accept all to lo":
+#       proto: "all"
+#       iniface: "lo"
+#       action: "accept"
+#
 #   @see https://forge.puppet.com/puppetlabs/firewall/readme#beginning-with-firewall
 #
 # @param post
