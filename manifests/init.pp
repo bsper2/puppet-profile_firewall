@@ -13,7 +13,7 @@
 #   The 3-digit number indicates firewall rule order, lower numbered rules are
 #   added before higher numbers.
 # 
-#   @example
+#   @example Testing something
 #     "000 accept all icmp":
 #       proto: "icmp"
 #       action: "accept"
