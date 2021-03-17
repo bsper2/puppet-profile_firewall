@@ -30,11 +30,13 @@ The following parameters are available in the `profile_firewall` class.
 
 Data type: `Hash`
 
-Lists of ignore regex's for specific firewall chains.
+Lists of regex's telling Puppet to NOT remove matching rules, even if the
+rules were not added by Puppet.
+
 Keys must be in "CHAIN:TABLE:PROTOCOL" format.
 Values must be an Array of strings in Ruby regex format.
-
-@see https://forge.puppet.com/puppetlabs/firewall/reference#firewallchain
+See README for some basic examples, or the following for more details:
+https://forge.puppet.com/puppetlabs/firewall/reference#firewallchain
 
 ##### `pre`
 
@@ -44,17 +46,8 @@ Exceptions to start the firewall rules
 Keys must begin with a 3-digit numer followed by a comment.
 The 3-digit number indicates firewall rule order, lower numbered rules are
 added before higher numbers.
-
-@example Testing something
-  "000 accept all icmp":
-    proto: "icmp"
-    action: "accept"
-  "001 accept all to lo":
-    proto: "all"
-    iniface: "lo"
-    action: "accept"
-
-@see https://forge.puppet.com/puppetlabs/firewall/readme#beginning-with-firewall
+See README for some basic examples, or the following for more details:
+https://forge.puppet.com/puppetlabs/firewall/readme#beginning-with-firewall
 
 ##### `post`
 
@@ -64,7 +57,8 @@ Exceptions to end the firewall rules.
 Keys must begin with a 3-digit numer followed by a comment.
 The 3-digit number indicates firewall rule order, lower numbered rules are
 added before higher numbers.
-@see https://forge.puppet.com/puppetlabs/firewall/readme#beginning-with-firewall
+See README for some basic examples, or the following for more details:
+https://forge.puppet.com/puppetlabs/firewall/readme#beginning-with-firewall
 
 ##### `inbuilt_chains`
 
