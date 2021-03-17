@@ -4,7 +4,7 @@
 
 Configures iptables firewall
 
-By default this module will modify the firewall so that:
+By default this module will modify the firewall so that it will:
 - Accept all icmp traffic
 - Accept all lo traffic
 - Accept all Related,Established traffic
