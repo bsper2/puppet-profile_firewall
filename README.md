@@ -14,13 +14,9 @@ See usage for how to modify/add firewall rules
 
 ## Usage
 
--Add note about running it twice
-
 ### Adding firewall rules
 
-Rules are added through hiera using the hash `profile_firewall::pre`
-
-Keys must start with a 3-digit numer followed by a comment. The 3-digit number indicates firewall rule order, lower numbered rules are added before higher numbers.
+Rules are added through hiera using the hash `profile_firewall::pre` and `profile_firewall::post`. Rules in `profile_firewall::pre` are applied before rules in `profile_firewall::post`, but the final order of the rules themselves is controlled by the name of the key. Keys must start with a 3-digit numer followed by a comment. The 3-digit number indicates firewall rule order, lower numbered rules are added before higher numbers.
 
 Example Rules
 ```
@@ -46,7 +42,7 @@ This is done by setting this value in hiera `profile_firewall::ignores`
 
 Keys must be in "CHAIN:TABLE:PROTOCOL" format. Values must be an Array of strings in Ruby regex format.
 
-Example that tells puppet to leave any rule that has the string `Keep this`
+Example that tells puppet to leave any rule in `INPUT:filter:IPv4` that has the string `Keep this`
 ```
 profile_firewall::ignores:
   INPUT:filter:IPv4: "Keep this"
