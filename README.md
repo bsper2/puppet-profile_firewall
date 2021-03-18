@@ -14,6 +14,8 @@ See usage for how to modify/add firewall rules
 
 ## Usage
 
+If your system does not have any iptables chain configured then puppet agent will need to run twice. After the first run some default rules from iptables itself will be injected, this won't break anything, but a second agent run will clear out the unnecessary rules
+
 ### Adding firewall rules
 
 Rules are added through hiera using the hash `profile_firewall::pre` and `profile_firewall::post`. Rules in `profile_firewall::pre` are applied before rules in `profile_firewall::post`, but the final order of the rules themselves is controlled by the name of the key. Keys must start with a 3-digit numer followed by a comment. The 3-digit number indicates firewall rule order, lower numbered rules are added before higher numbers.
