@@ -62,3 +62,7 @@ profile_firewall::post:
   "999 drop all":
     proto: "all"
     action: "drop"
+  "999 drop all":
+    proto: "all"
+    action: "drop"
+    provider: "ip6tables"
