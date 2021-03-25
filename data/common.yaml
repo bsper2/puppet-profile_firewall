@@ -13,7 +13,6 @@ profile_firewall::ignores:
   FORWARD:filter:IPv4: ["docker", "DOCKER"]
   DOCKER:filter:IPv4: "*"
   DOCKER:nat:IPv4: "*"
-  
 
 profile_firewall::inbuilt_chains:
   FORWARD:filter:IPv4:
