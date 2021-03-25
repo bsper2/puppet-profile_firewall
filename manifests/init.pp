@@ -1,10 +1,12 @@
 # @summary Initial firewall configuration
 #
 # @param ignores
-#   Lists of ignore regex's for specific firewall chains.
+#   Lists of regex's telling Puppet to NOT remove matching rules, even if the
+#   rules were not added by Puppet.
+#
 #   Keys must be in "CHAIN:TABLE:PROTOCOL" format.
 #   Values must be an Array of strings in Ruby regex format.
-#   See also:
+#   See README for some basic examples, or the following for more details:
 #   https://forge.puppet.com/puppetlabs/firewall/reference#firewallchain
 #
 # @param pre
@@ -12,7 +14,7 @@
 #   Keys must begin with a 3-digit numer followed by a comment.
 #   The 3-digit number indicates firewall rule order, lower numbered rules are
 #   added before higher numbers.
-#   See also:
+#   See README for some basic examples, or the following for more details:
 #   https://forge.puppet.com/puppetlabs/firewall/readme#beginning-with-firewall
 #
 # @param post
@@ -20,13 +22,14 @@
 #   Keys must begin with a 3-digit numer followed by a comment.
 #   The 3-digit number indicates firewall rule order, lower numbered rules are
 #   added before higher numbers.
-#   See also:
+#   See README for some basic examples, or the following for more details:
 #   https://forge.puppet.com/puppetlabs/firewall/readme#beginning-with-firewall
 #
 # @param inbuilt_chains
 #   Default Linux chains. Module defaults should be sufficient.
 #   Keys must be in "CHAIN:TABLE:PROTOCOL" format.
 #   Values must be Hash of valid puppetlabs::firewallchain parameters
+#
 # @example
 #   include profile_firewall
 class profile_firewall (
